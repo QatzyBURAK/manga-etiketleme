@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' blob: data:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Duygu etiketleme</title>
+    <script type="module" crossorigin src="./assets/index-DrKsoC_P.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-8na0WhvS.css">
+  </head>
+  <body>
+    <header class="ust">
+      <div class="durum" aria-label="Durum">
+        <button type="button" id="etiketleyici" class="durum-oge bag" title="Etiketleyici adını değiştir"></button>
+        <span id="liste-adi" class="durum-oge"></span>
+        <span id="ilerleme" class="durum-oge"></span>
+        <span id="sayac" class="durum-oge"></span>
+        <span id="ceviri-durum" class="durum-oge"></span>
+        <button type="button" id="ceviri-indir" hidden>Çeviri modelini indir</button>
+        <span id="klasor-durum" class="durum-oge"></span>
+        <span id="dialog-durum" class="durum-oge"></span>
+      </div>
+      <nav class="dugmeler" aria-label="İşlemler">
+        <button type="button" id="klasor-sec">Klasör seç</button>
+        <button type="button" id="dialog-sec">Dialog klasörü seç</button>
+        <button type="button" id="liste-yukle">Listeyi yükle</button>
+        <button type="button" id="json-indir">JSON indir</button>
+        <button type="button" id="csv-indir">CSV indir</button>
+        <button type="button" id="geri-yukle">Dosyadan geri yükle</button>
+        <button type="button" id="yonerge-ac">Yönerge (?)</button>
+        <input type="file" id="liste-dosya" accept=".json,application/json" hidden />
+        <input type="file" id="geri-dosya" accept=".json,application/json" hidden />
+      </nav>
+    </header>
+
+    <div id="mesaj" class="mesaj" role="status" aria-live="polite"></div>
+    <div id="rapor" class="rapor" hidden></div>
+
+    <main class="calisma">
+      <section class="sayfa-alani" aria-label="Sayfa">
+        <canvas id="sayfa" class="sayfa" hidden></canvas>
+        <p id="bos" class="bos">Başlamak için "Klasör seç" ile Manga109-s kök klasörünü, "Dialog klasörü seç" ile Dialog anotasyonlarını seçin, sonra "Listeyi yükle".</p>
+      </section>
+      <aside class="yan">
+        <canvas id="yakin" class="yakin" hidden></canvas>
+        <p id="oge-kimlik" class="oge-kimlik"></p>
+        <p id="onceki" class="onceki" hidden></p>
+        <h2 class="balon-baslik">Konuşmacının balonları</h2>
+        <ol id="balonlar" class="balonlar"></ol>
+      </aside>
+    </main>
+
+    <footer id="tuslar" class="tuslar" aria-label="Tuşlar"></footer>
+
+    <div id="yonerge" class="yonerge" role="dialog" aria-modal="true" aria-labelledby="yonerge-baslik" hidden>
+      <div class="yonerge-kutu">
+        <h2 id="yonerge-baslik">Yönerge</h2>
+        <ul id="yonerge-liste" class="yonerge-liste"></ul>
+        <button type="button" id="yonerge-kapat">Kapat (Esc)</button>
+      </div>
+    </div>
+
+    <dialog id="ad-sor" class="ad-sor">
+      <form id="ad-form" method="dialog">
+        <label for="ad-girdi">Etiketleyici adın</label>
+        <input id="ad-girdi" name="ad" required maxlength="40" autocomplete="off" />
+        <p class="ipucu">Ad bu tarayıcıda saklanır ve her karara yazılır. Dosya adlarında da kullanılır.</p>
+        <button type="submit">Başla</button>
+      </form>
+    </dialog>
+
+  </body>
+</html>
